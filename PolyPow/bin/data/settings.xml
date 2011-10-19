@@ -1,0 +1,60 @@
+<leftInput>
+    <val_0>1.31667</val_0>
+</leftInput>
+<rightInput>
+    <val_0>0.0666667</val_0>
+</rightInput>
+<topInput>
+    <val_0>-0.883333</val_0>
+</topInput>
+<bottomInput>
+    <val_0>0.6</val_0>
+</bottomInput>
+<gravity>
+    <val_0>50</val_0>
+</gravity>
+<friction>
+    <val_0>0.01</val_0>
+</friction>
+<explodeDistance>
+    <val_0>100</val_0>
+</explodeDistance>
+<explosionTime>
+    <val_0>10</val_0>
+</explosionTime>
+<debug>
+    <val_0>0</val_0>
+</debug>
+<manualMode>
+    <val_0>0</val_0>
+</manualMode>
+<playerCount>
+    <val_0>0.711111</val_0>
+</playerCount>
+<fire0>
+    <val_0>0</val_0>
+</fire0>
+<fire1>
+    <val_0>0</val_0>
+</fire1>
+<titleScale>
+    <val_0>6.5</val_0>
+</titleScale>
+<lifecenter>
+    <val_0>0.133333</val_0>
+</lifecenter>
+<lifey>
+    <val_0>-91.0222</val_0>
+</lifey>
+<player0x>
+    <val_0>0</val_0>
+</player0x>
+<player0y>
+    <val_0>0.5</val_0>
+</player0y>
+<player1x>
+    <val_0>1</val_0>
+</player1x>
+<player1y>
+    <val_0>0.5</val_0>
+</player1y>
