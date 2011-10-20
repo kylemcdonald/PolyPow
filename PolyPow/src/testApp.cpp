@@ -25,6 +25,7 @@ void testApp::maskedDraw(ofBaseHasTexture& tex) {
 	ofEnableAlphaBlending();
 	maskShader.begin();
 	maskShader.setUniformTexture("tex", texture, 0);
+	ofSetMinMagFilters(GL_NEAREST, GL_NEAREST);
 	texture.draw((int) -texture.getWidth() / 2, (int) -texture.getHeight() / 2);
 	maskShader.end();
 	ofDisableAlphaBlending();
@@ -231,7 +232,7 @@ void testApp::drawLife(int id) {
 
 void testApp::draw(){
 	ofSetMinMagFilters(GL_NEAREST, GL_NEAREST);
-	
+		
 	ofBackground(0);
 	ofSetColor(255);
 	
@@ -250,6 +251,24 @@ void testApp::draw(){
 	} else if(playerCount == 2) {
 		for(int i = 0; i < projectiles.size(); i++) {
 			projectiles[i].draw();
+		}
+		
+		ofSetColor(255);
+		for(int i = 0; i < players.size(); i++) {
+			if(players[i].life > 0) {
+				ofPushMatrix();
+				ofTranslate((int) players[i].position.x, (int) players[i].position.y);
+				ofScale(2, 2);
+				if(players[i].position.x > ofGetWidth() / 2) {
+					ofScale(-1, 1);
+				}
+				if(i == 0) {
+					maskedDraw(ryu);
+				} else {
+					maskedDraw(ken);
+				}
+				ofPopMatrix();
+			}
 		}
 	}
 	
@@ -280,24 +299,6 @@ void testApp::draw(){
 		ofSetColor(255);
 		for(int i = 0; i < players.size(); i++) {
 			ofCircle(players[i].position, 32);
-		}
-	}
-
-	ofSetColor(255);
-	for(int i = 0; i < players.size(); i++) {
-		if(players[i].life > 0) {
-			ofPushMatrix();
-			ofTranslate((int) players[i].position.x, (int) players[i].position.y);
-			ofScale(2, 2);
-			if(players[i].position.x > ofGetWidth() / 2) {
-				ofScale(-1, 1);
-			}
-			if(i == 0) {
-				maskedDraw(ryu);
-			} else {
-				maskedDraw(ken);
-			}
-			ofPopMatrix();
 		}
 	}
 }
